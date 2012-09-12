@@ -109,10 +109,7 @@ footer() {
 
     uamfile "footer" 1 
 
-    echo "<table style=\"clear:both;margin:auto;padding-top:10px;\" height=\"30\">
-<tr><td valign=\"center\" align=\"center\" style=\"color:#666;font-size:60%;\">Powered by</td>
-<td valign=\"center\" align=\"center\"><a href=\"http://coova.org/\"><img border=0 src=\"coova.jpg\"></a>
-</td></tr></table></body></html>"
+    echo "</body></html>"
 }
 
 error() { echo "<div class=\"err\">$1</div>"; }
