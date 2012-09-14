@@ -45,6 +45,7 @@ PORTAL_SESSIONID=${COOKIE_PORTAL_SESSIONID:-$SESSIONID}
     
 http_redirect2() {
     echo "HTTP/1.1 302 Redirect"
+    echo "Content-Type: text/html; charset=UTF-8"
     echo "Location: $1"
     echo "Set-Cookie: PORTAL_SESSIONID=$PORTAL_SESSIONID"
     echo "Set-Cookie: COOVA_USERURL=$COOVA_USERURL"
