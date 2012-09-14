@@ -3,21 +3,34 @@
   -->
 
 <script>
-    (function() {
+    (function () {
         var form = document.forms[0],
-	    counter = document.getElementById("counter"),
-	    autologin;
-	    
-	setInterval(function() {
-	    updateCounter(counter);
-	}, 1000);
-	
-	function updateCounter(el) {
-	    el.innerHTML = parseInt(el.innerHTML) -1;
-	}
+            notify = document.getElementById("notify"),
+            counter = document.getElementById("counter"),
+            autologin,
+            updateInerval;
 
-        autologin = setTimeout(function() {
+        function cancelAutologin() {
+            clearInterval(updateInerval);
+            clearTimeout(autologin);
+            notify.innerHTML = "Автоматический вход отключен. Логин и пароль гостевого доступа: <strong>wifi</strong>.";
+        }
+
+        function updateCounter(el) {
+            el.innerHTML = parseInt(el.innerHTML) - 1;
+        }
+
+        updateInerval = setInterval(function () {
+            updateCounter(counter);
+        }, 1000);
+
+
+        autologin = setTimeout(function () {
             form.submit();
         }, 30000);
+
+        form['username'].onchange(function() {
+            clearTimeout(autologin);
+        });
     })()
 </script>
