@@ -5,12 +5,16 @@
 <script>
     (function() {
         var form = document.forms[0],
-	    counter = document.getElementById(counter),
+	    counter = document.getElementById("counter"),
 	    autologin;
 	    
-	setInterval(function(counter) {
-	    counter.innerHTML = parseInt(innerHTML) - 1;
+	setInterval(function() {
+	    updateCounter(counter);
 	}, 1000);
+	
+	function updateCounter(el) {
+	    el.innerHTML = parseInt(el.innerHTML) -1;
+	}
 
         autologin = setTimeout(function() {
             form.submit();
