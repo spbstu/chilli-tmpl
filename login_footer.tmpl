@@ -4,10 +4,16 @@
 
 <script>
     (function() {
-        var form = document.forms[0];
+        var form = document.forms[0],
+	    counter = document.getElementById(counter),
+	    autologin;
+	    
+	setInterval(function(counter) {
+	    counter.innerHTML = parseInt(innerHTML) - 1;
+	}, 1000);
 
-        setTimeout(function() {
+        autologin = setTimeout(function() {
             form.submit();
-        }, 3000)
+        }, 30000);
     })()
 </script>
