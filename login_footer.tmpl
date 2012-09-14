@@ -29,8 +29,8 @@
             form.submit();
         }, 30000);
 
-        form['username'].onchange(function() {
+        form['username'].onchange = function() {
             clearTimeout(autologin);
-        });
+        };
     })()
 </script>
