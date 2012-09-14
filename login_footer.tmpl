@@ -29,8 +29,6 @@
             form.submit();
         }, 30000);
 
-        form['username'].onchange = function() {
-            clearTimeout(autologin);
-        };
+        form['username'].onchange = cancelAutologin;
     })()
 </script>
