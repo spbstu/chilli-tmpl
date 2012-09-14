@@ -72,7 +72,7 @@ http_header() {
     }
     
     echo "HTTP/1.1 200 OK"
-    echo "Content-Type: text/html"
+    echo "Content-Type: text/html; charset=utf8"
     echo "Set-Cookie: PORTAL_SESSIONID=$PORTAL_SESSIONID"
     echo "Set-Cookie: COOVA_USERURL=$COOVA_USERURL"
     echo "Connection: close"
