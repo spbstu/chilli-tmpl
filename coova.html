@@ -3,34 +3,39 @@
 <!-- redirecting... either by meta tag or javascript -->
 <script type="text/javascript" language="Javascript">
 //<!--
+var loginUrl;
+
 function getURLParam(n) {
-  var s = "";
-  var href = window.location.href;
-  var idx = href.indexOf("?");
-  if (idx > -1) {
-    var qs = href.substr(idx + 1);
-    idx = qs.indexOf(n + "=");
+    var s = "";
+    var href = window.location.href;
+    var idx = href.indexOf("?");
     if (idx > -1) {
-      s = qs.substr(idx + n.length + 1);
-      if (s.charAt(4) == '%' || s.charAt(5) == '%') {
-        s = s.replace(/%3a/g, ":");
-        s = s.replace(/%2f/g, "/");
-        s = s.replace(/%3f/g, "?");
-        s = s.replace(/%3d/g, "=");
-        s = s.replace(/%26/g, "&");
-        s = s.replace(/%25/g, "%");
-        s = s.replace(/\+/g, " ");
-      }
-      return s;
+        var qs = href.substr(idx + 1);
+        idx = qs.indexOf(n + "=");
+        if (idx > -1) {
+            s = qs.substr(idx + n.length + 1);
+            if (s.charAt(4) == '%' || s.charAt(5) == '%') {
+                s = s.replace(/%3a/g, ":");
+                s = s.replace(/%2f/g, "/");
+                s = s.replace(/%3f/g, "?");
+                s = s.replace(/%3d/g, "=");
+                s = s.replace(/%26/g, "&");
+                s = s.replace(/%25/g, "%");
+                s = s.replace(/\+/g, " ");
+            }
+            return s;
+        }
     }
-  }
 }
 
-var loginUrl;
-function redirect() { window.location = loginUrl; return false; }
-window.onload = function() {
-  loginUrl = getURLParam("loginurl");
-  setTimeout(redirect, 5000); 
+function redirect() {
+    window.location = loginUrl;
+    return false;
+}
+
+window.onload = function () {
+    loginUrl = getURLParam("loginurl");
+    setTimeout(redirect, 5000);
 }
 //-->
 </script>
@@ -42,7 +47,7 @@ window.onload = function() {
 vertical-align:middle;text-align:center;color:grey;">
 <a href="#" onclick="javascript:return redirect();">
 <img src="spbspu-logo.png" alt="" border="0" /></a><br>
-<small><img src="wait.gif"/>loading...</small></p>
+<small><img src="wait.gif"/> загружаемся...</small></p>
 <br><br>
 </div>
 </body>

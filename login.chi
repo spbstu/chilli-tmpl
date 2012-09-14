@@ -47,7 +47,7 @@ else
 	if [ -n "$FORM_reply" ]; then
 	    error "$FORM_reply"
 	else
-	    error "Username and/or passowrd was not valid"
+	    error "Имя пользователя или пароль указаны не верно"
 	fi
     fi
     
