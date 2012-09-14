@@ -17,7 +17,7 @@
         }
 
         function updateCounter(el) {
-            el.innerHTML = parseInt(el.innerHTML) - 1;
+            el.innerHTML = parseInt(el.innerHTML) - 1 || 0;
         }
 
         updateInerval = setInterval(function () {
